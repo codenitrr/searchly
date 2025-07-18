@@ -1,0 +1,27 @@
+<script defer>
+    window.searchlyConfig = {
+        searchBarIds: [
+            'myMainSearchBar',    // Vervang dit met de ID's van UW zoekbalken!
+            'footerSearchInput'
+        ]
+    };
+
+    (function() {
+        var script = document.createElement('script');
+        script.src = 'https://jouw-domein.com/pad-naar-je-scripts/searchly-initializer.js'; // VERVANG DEZE URL!
+        // Geen script.async = true; nodig als je defer gebruikt op de inline script tag
+        script.onload = function() {
+            if (typeof setupSearchly === 'function' && window.searchlyConfig && window.searchlyConfig.searchBarIds) {
+                window.searchlyConfig.searchBarIds.forEach(function(id) {
+                    setupSearchly(id);
+                });
+            } else {
+                console.error('Searchly: Kan setupSearchly niet vinden of configuratie ontbreekt.');
+            }
+        };
+        script.onerror = function() {
+            console.error('Searchly: Fout bij het laden van searchly-initializer.js');
+        };
+        document.head.appendChild(script);
+    })();
+</script>

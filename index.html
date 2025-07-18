@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <title>E-commerce Winkel</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 40px; }
+        .search-bar { margin-bottom: 20px; }
+        input[type="text"] { padding: 8px; width: 250px; }
+        button { padding: 8px 16px; }
+    </style>
+</head>
+<body>
+    <h1>Welkom bij onze E-commerce Winkel</h1>
+    <form class="search-bar" action="#" method="get">
+        <input type="text" id="zoekbalk" name="q" placeholder="Zoek producten...">
+        <button type="submit">Zoeken</button>
+    </form>
+    <!-- Hier kun je producten of andere inhoud toevoegen -->
+</body>
+<div id="resultaten"></div>
+<script src="searchly.js"></script>
+<script>
+  setupSearchly('zoekbalk', 'resultaten');
+</script>
+</html>
